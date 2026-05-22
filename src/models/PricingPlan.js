@@ -1,30 +1,28 @@
 const { Schema, model, models } = require("mongoose");
 
-const userSchema = new Schema(
+const pricingPlanSchema = new Schema(
   {
     name: {
       type: String,
       required: true,
       trim: true,
     },
-    email: {
+    price: {
       type: String,
       required: true,
-      unique: true,
-      lowercase: true,
       trim: true,
     },
-    passwordHash: {
+    term: {
       type: String,
-      required: true,
+      trim: true,
     },
-    role: {
-      type: String,
-      enum: ["ADMIN"],
-      default: "ADMIN",
+    monthly: Number,
+    featured: {
+      type: Boolean,
+      default: false,
     },
   },
   { timestamps: true },
 );
 
-module.exports = models.User || model("User", userSchema);
+module.exports = models.PricingPlan || model("PricingPlan", pricingPlanSchema);
