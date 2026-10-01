@@ -1,4 +1,4 @@
-# HireInfinity Backend
+# HireInfinity Backend MVP
 
 Small Node.js API for HireInfinity lead capture and booking requests.
 
